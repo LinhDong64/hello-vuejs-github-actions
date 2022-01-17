@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello VueJs</title>
+</head>
+<body>
+
+    <!-- use v-once attribute:one-time interpolations and no update change data -->
+    <div id="app" v-once>
+        {{message}}
+    </div>
+
+    <div id="app-2">
+        <!-- Data binding -->
+        <span v-bind:title="message">The brown fox jump over the lazy dog</span>
+        <!-- <span :title="message">The brown fox jump over the lazy dog</span> -->
+    </div>
+
+    <div id="app-3">
+        <!-- If clause -->
+        <span v-if="seen">
+            Now you see me!
+        </span>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <!-- for loop -->
+            <li v-for="fruit in fruits">{{fruit.name}}</li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <p>{{message}}</p>
+        <!-- handle event onclick -->
+        <button v-on:click="reverseMessage">Reverse Button</button>
+        <!-- <button @click="reverseMessage">Reverse Button</button> -->
+    </div>
+
+    <div id="app-6">
+        <!-- two way binding -->
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
